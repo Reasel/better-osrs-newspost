@@ -1,0 +1,77 @@
+name: Build and deploy newspost site
+
+on:
+  schedule:
+    # Every 3 hours (UTC). GitHub may delay scheduled runs during peak load.
+    - cron: "0 */3 * * *"
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths-ignore:
+      - "state.json"
+
+# Pages deploy needs pages/id-token; committing state.json back needs contents.
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+# Never cancel an in-flight deploy; let runs queue.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Build site + detect new post
+        env:
+          NUM_POSTS: "3"
+        run: python scraper.py build
+
+      - name: Persist state.json
+        run: |
+          if [[ -n "$(git status --porcelain state.json)" ]]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add state.json
+            git commit -m "Update newspost state [skip ci]"
+            git push
+          else
+            echo "state.json unchanged."
+          fi
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload site artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+      - name: Deploy to GitHub Pages
+        id: deploy
+        uses: actions/deploy-pages@v4
+
+      # Notify only after the fresh site is live, so the link is ready to read.
+      - name: Send ntfy notification
+        if: success()
+        env:
+          NTFY_TOPIC: OSRSNewsPost
+          SITE_URL: ${{ steps.deploy.outputs.page_url }}
+        run: python scraper.py notify
