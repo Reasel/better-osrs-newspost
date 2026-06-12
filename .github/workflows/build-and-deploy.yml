@@ -41,7 +41,7 @@ jobs:
 
       - name: Build site + detect new post
         env:
-          NUM_POSTS: "3"
+          NUM_POSTS: "15"
         run: python scraper.py build
 
       - name: Persist state.json

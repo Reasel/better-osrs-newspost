@@ -26,7 +26,7 @@ from bs4 import BeautifulSoup
 # Config (most can be overridden with environment variables)
 # ---------------------------------------------------------------------------
 FEED_URL = "https://secure.runescape.com/m=news/latest_news.rss?oldschool=1"
-NUM_POSTS = int(os.environ.get("NUM_POSTS", "3"))
+NUM_POSTS = int(os.environ.get("NUM_POSTS", "15"))
 SITE_DIR = os.environ.get("SITE_DIR", "site")
 STATE_FILE = os.environ.get("STATE_FILE", "state.json")
 NOTIFY_FILE = os.environ.get("NOTIFY_FILE", ".notify.json")

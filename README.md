@@ -98,7 +98,7 @@ nix-shell -p 'python3.withPackages(ps: with ps; [requests feedparser beautifulso
 ## Tweaks
 
 - **Number of posts:** `NUM_POSTS` in `scraper.py` (or the env var of the same
-  name; the workflow sets it to `3`).
+  name; the workflow sets it to `15`).
 - **Schedule:** the `cron:` line in the workflow (times are UTC).
 - **ntfy topic:** `NTFY_TOPIC` env var (default `OSRSNewsPost`). Use a private
   server with `NTFY_BASE`.
