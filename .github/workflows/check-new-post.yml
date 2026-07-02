@@ -2,8 +2,8 @@ name: Check for new newspost
 
 on:
   schedule:
-    # Every 15 minutes. Cheap: one RSS fetch; dispatches the real build
-    # only when the newest guid differs from committed state.json.
+    # Every 15 minutes. Light probe: feed fetch + top-3 article hashes via
+    # scraper.py check; dispatches the real build only when something changed.
     - cron: "*/15 * * * *"
   workflow_dispatch:
 
@@ -23,25 +23,23 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Compare newest feed guid to state.json
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Check feed + top posts for changes
         id: check
         run: |
-          feed_guid=$(curl -fsS --retry 3 \
-            -A "Mozilla/5.0 (BetterOSRSNewspost; personal-use newspost mirror)" \
-            "https://secure.runescape.com/m=news/latest_news.rss?oldschool=1" \
-            | grep -oPm1 '<guid[^>]*>\K[^<]+' | sed 's/&amp;/\&/g' | tr -d '[:space:]')
-          if [[ -z "$feed_guid" ]]; then
-            echo "::error::Could not extract a guid from the feed."
-            exit 1
-          fi
-          state_guid=$(jq -r '.last_guid // empty' state.json | tr -d '[:space:]')
-          echo "feed guid:  $feed_guid"
-          echo "state guid: $state_guid"
-          if [[ "$feed_guid" != "$state_guid" ]]; then
-            echo "New post detected -> dispatching build."
+          out=$(python scraper.py check)
+          echo "$out"
+          if grep -q '^CHANGED' <<< "$out"; then
             echo "new=true" >> "$GITHUB_OUTPUT"
           else
-            echo "No new post."
             echo "new=false" >> "$GITHUB_OUTPUT"
           fi
 
