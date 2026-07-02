@@ -387,7 +387,11 @@ def cmd_build():
     updated = datetime.now(timezone.utc).strftime("%d %b %Y, %H:%M UTC")
 
     for i, post in enumerate(posts):
-        content = extract_article_html(fetch(post["link"]).text, post["link"])
+        # Pass raw bytes (not .text): OSRS pages omit a charset, so requests
+        # would default to ISO-8859-1 and mangle cp1252 smart quotes (0x92 → an
+        # invisible control char). BeautifulSoup sniffs the encoding and repairs
+        # Windows-1252 quotes itself.
+        content = extract_article_html(fetch(post["link"]).content, post["link"])
         if not content:
             content = (
                 f'<p>Could not extract this post. '
