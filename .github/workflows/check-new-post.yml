@@ -1,0 +1,52 @@
+name: Check for new newspost
+
+on:
+  schedule:
+    # Every 15 minutes. Cheap: one RSS fetch; dispatches the real build
+    # only when the newest guid differs from committed state.json.
+    - cron: "*/15 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: write
+
+# One poll at a time; a late poll can just be skipped by the next one.
+concurrency:
+  group: check-new-post
+  cancel-in-progress: false
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Compare newest feed guid to state.json
+        id: check
+        run: |
+          feed_guid=$(curl -fsS --retry 3 \
+            -A "Mozilla/5.0 (BetterOSRSNewspost; personal-use newspost mirror)" \
+            "https://secure.runescape.com/m=news/latest_news.rss?oldschool=1" \
+            | grep -oPm1 '<guid[^>]*>\K[^<]+' | sed 's/&amp;/\&/g' | tr -d '[:space:]')
+          if [[ -z "$feed_guid" ]]; then
+            echo "::error::Could not extract a guid from the feed."
+            exit 1
+          fi
+          state_guid=$(jq -r '.last_guid // empty' state.json | tr -d '[:space:]')
+          echo "feed guid:  $feed_guid"
+          echo "state guid: $state_guid"
+          if [[ "$feed_guid" != "$state_guid" ]]; then
+            echo "New post detected -> dispatching build."
+            echo "new=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "No new post."
+            echo "new=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Trigger build-and-deploy
+        if: steps.check.outputs.new == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run build-and-deploy.yml --ref main
