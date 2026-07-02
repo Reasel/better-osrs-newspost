@@ -12,6 +12,7 @@ fires, so the link in the push points at an already-live page.
 """
 
 import calendar
+import hashlib
 import json
 import os
 import sys
@@ -27,6 +28,8 @@ from bs4 import BeautifulSoup
 # ---------------------------------------------------------------------------
 FEED_URL = "https://secure.runescape.com/m=news/latest_news.rss?oldschool=1"
 NUM_POSTS = int(os.environ.get("NUM_POSTS", "15"))
+# How many of the newest posts the "check" command probes for content edits.
+CHECK_POSTS = int(os.environ.get("CHECK_POSTS", "3"))
 SITE_DIR = os.environ.get("SITE_DIR", "site")
 STATE_FILE = os.environ.get("STATE_FILE", "state.json")
 NOTIFY_FILE = os.environ.get("NOTIFY_FILE", ".notify.json")
@@ -328,11 +331,12 @@ def load_state():
         return None
 
 
-def save_state(post):
+def save_state(post, content_hashes):
     state = {
         "last_guid": post["guid"],
         "last_title": post["title"],
         "last_link": post["link"],
+        "content_hashes": content_hashes,
         "updated_utc": datetime.now(timezone.utc).isoformat(timespec="seconds"),
     }
     with open(STATE_FILE, "w", encoding="utf-8") as f:
@@ -340,8 +344,14 @@ def save_state(post):
         f.write("\n")
 
 
-def write_notify_marker(post):
-    payload = {"title": post["title"], "post_link": post["link"]}
+def content_hash(html):
+    return hashlib.sha256(html.encode("utf-8")).hexdigest()
+
+
+def write_notify_marker(kind, title, post_link, titles=None):
+    payload = {"kind": kind, "title": title, "post_link": post_link}
+    if titles:
+        payload["titles"] = titles
     with open(NOTIFY_FILE, "w", encoding="utf-8") as f:
         json.dump(payload, f, indent=2)
 
@@ -353,17 +363,28 @@ def cmd_notify():
     with open(NOTIFY_FILE, encoding="utf-8") as f:
         payload = json.load(f)
 
+    kind = payload.get("kind", "new")
     title = payload.get("title", "New OSRS Newspost")
     post_link = payload.get("post_link", "")
     read_url = SITE_URL or post_link
 
-    body = f"{title}\n\nRead: {read_url}"
+    if kind == "updated":
+        titles = payload.get("titles") or [title]
+        heading = "OSRS Newspost Updated"
+        tags = "pencil"
+        summary = "Updated:\n" + "\n".join(f"• {t}" for t in titles)
+    else:
+        heading = "New OSRS Newspost"
+        tags = "newspaper"
+        summary = title
+
+    body = f"{summary}\n\nRead: {read_url}"
     if post_link and post_link != read_url:
         body += f"\nSource: {post_link}"
 
     headers = {
-        "Title": "New OSRS Newspost",
-        "Tags": "newspaper",
+        "Title": heading,
+        "Tags": tags,
         "Priority": "default",
     }
     if read_url or post_link:
@@ -372,7 +393,7 @@ def cmd_notify():
     url = f"{NTFY_BASE}/{NTFY_TOPIC}"
     resp = SESSION.post(url, data=body.encode("utf-8"), headers=headers, timeout=30)
     resp.raise_for_status()
-    print(f"Sent ntfy to {url}: {title}")
+    print(f"Sent ntfy to {url}: {heading} — {title}")
     os.remove(NOTIFY_FILE)
 
 
@@ -385,6 +406,11 @@ def cmd_build():
 
     os.makedirs(SITE_DIR, exist_ok=True)
     updated = datetime.now(timezone.utc).strftime("%d %b %Y, %H:%M UTC")
+
+    state = load_state()
+    old_hashes = (state or {}).get("content_hashes") or {}
+    new_hashes = {}
+    edited = []
 
     for i, post in enumerate(posts):
         # Pass raw bytes (not .text): OSRS pages omit a charset, so requests
@@ -399,6 +425,15 @@ def cmd_build():
                 f"Read it on RuneScape.com</a>.</p>"
             )
             print(f"  ! content extraction failed for {post['link']}")
+            # Carry the old hash forward so a transient scrape miss never
+            # reads as an edit (now or when the post comes back).
+            if post["guid"] in old_hashes:
+                new_hashes[post["guid"]] = old_hashes[post["guid"]]
+        else:
+            digest = content_hash(content)
+            new_hashes[post["guid"]] = digest
+            if post["guid"] in old_hashes and old_hashes[post["guid"]] != digest:
+                edited.append(post)
         html = render_page(post, content, posts, i, updated)
         path = os.path.join(SITE_DIR, filename_for(i))
         with open(path, "w", encoding="utf-8") as f:
@@ -406,7 +441,6 @@ def cmd_build():
         print(f"  wrote {path}  ({post['title']})")
 
     # New-post detection.
-    state = load_state()
     newest = posts[0]
     if state is None:
         is_new = NOTIFY_ON_FIRST_RUN
@@ -414,24 +448,69 @@ def cmd_build():
     else:
         is_new = newest["guid"] != state.get("last_guid")
         print(f"New post detected: {is_new}")
+        if not old_hashes:
+            print("No prior content hashes — baselining without edit checks.")
+        elif edited:
+            print(f"Edited posts detected: {[p['title'] for p in edited]}")
 
     if is_new:
-        write_notify_marker(newest)
+        write_notify_marker("new", newest["title"], newest["link"])
         print(f"  queued notification: {newest['title']}")
+    elif edited:
+        titles = [p["title"] for p in edited]
+        write_notify_marker("updated", titles[0], edited[0]["link"], titles)
+        print(f"  queued update notification: {titles}")
     elif os.path.exists(NOTIFY_FILE):
         os.remove(NOTIFY_FILE)
 
-    save_state(newest)
+    save_state(newest, new_hashes)
+
+
+def cmd_check():
+    """Read-only change probe for CI polling: feed guid plus content hashes
+    of the top CHECK_POSTS articles. Prints a verdict line starting with
+    CHANGED or UNCHANGED. Never writes state — the build owns that."""
+    posts = get_entries()
+    state = load_state()
+    if state is None:
+        print("CHANGED: no prior state")
+        return
+    if posts[0]["guid"] != state.get("last_guid"):
+        print(f"CHANGED: new post {posts[0]['title']!r}")
+        return
+    hashes = state.get("content_hashes") or {}
+    if hashes:
+        for post in posts[:CHECK_POSTS]:
+            # A transient page failure must not fail the whole poll run (or
+            # dispatch a build) — skip the post; the next poll retries.
+            try:
+                page = fetch(post["link"]).content
+            except requests.RequestException as exc:
+                print(f"  ! fetch failed for {post['link']} (skipped): {exc}")
+                continue
+            content = extract_article_html(page, post["link"])
+            if not content:
+                print(f"  ! extraction failed for {post['link']} (skipped)")
+                continue
+            if post["guid"] not in hashes:
+                print(f"CHANGED: untracked post {post['title']!r}")
+                return
+            if content_hash(content) != hashes[post["guid"]]:
+                print(f"CHANGED: edited post {post['title']!r}")
+                return
+    print("UNCHANGED")
 
 
 def main():
     cmd = sys.argv[1] if len(sys.argv) > 1 else "build"
     if cmd == "build":
         cmd_build()
+    elif cmd == "check":
+        cmd_check()
     elif cmd == "notify":
         cmd_notify()
     else:
-        print(f"Unknown command: {cmd!r}. Use 'build' or 'notify'.", file=sys.stderr)
+        print(f"Unknown command: {cmd!r}. Use 'build', 'check' or 'notify'.", file=sys.stderr)
         sys.exit(2)
 
 
