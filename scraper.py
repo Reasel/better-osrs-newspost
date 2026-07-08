@@ -348,10 +348,8 @@ def content_hash(html):
     return hashlib.sha256(html.encode("utf-8")).hexdigest()
 
 
-def write_notify_marker(kind, title, post_link, titles=None):
-    payload = {"kind": kind, "title": title, "post_link": post_link}
-    if titles:
-        payload["titles"] = titles
+def write_notify_marker(title, post_link):
+    payload = {"title": title, "post_link": post_link}
     with open(NOTIFY_FILE, "w", encoding="utf-8") as f:
         json.dump(payload, f, indent=2)
 
@@ -363,22 +361,13 @@ def cmd_notify():
     with open(NOTIFY_FILE, encoding="utf-8") as f:
         payload = json.load(f)
 
-    kind = payload.get("kind", "new")
     title = payload.get("title", "New OSRS Newspost")
     post_link = payload.get("post_link", "")
     read_url = SITE_URL or post_link
 
-    if kind == "updated":
-        titles = payload.get("titles") or [title]
-        heading = "OSRS Newspost Updated"
-        tags = "pencil"
-        summary = "Updated:\n" + "\n".join(f"• {t}" for t in titles)
-    else:
-        heading = "New OSRS Newspost"
-        tags = "newspaper"
-        summary = title
-
-    body = f"{summary}\n\nRead: {read_url}"
+    heading = "New OSRS Newspost"
+    tags = "newspaper"
+    body = f"{title}\n\nRead: {read_url}"
     if post_link and post_link != read_url:
         body += f"\nSource: {post_link}"
 
@@ -451,15 +440,14 @@ def cmd_build():
         if not old_hashes:
             print("No prior content hashes — baselining without edit checks.")
         elif edited:
-            print(f"Edited posts detected: {[p['title'] for p in edited]}")
+            # Edits rebuild the site silently — live posts (known issues,
+            # game status) get edited many times a day; notifying each one
+            # is spam. Only brand-new posts notify.
+            print(f"Edited posts detected (no notification): {[p['title'] for p in edited]}")
 
     if is_new:
-        write_notify_marker("new", newest["title"], newest["link"])
+        write_notify_marker(newest["title"], newest["link"])
         print(f"  queued notification: {newest['title']}")
-    elif edited:
-        titles = [p["title"] for p in edited]
-        write_notify_marker("updated", titles[0], edited[0]["link"], titles)
-        print(f"  queued update notification: {titles}")
     elif os.path.exists(NOTIFY_FILE):
         os.remove(NOTIFY_FILE)
 
