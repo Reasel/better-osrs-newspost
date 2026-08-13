@@ -1,8 +1,9 @@
 {
-  "last_guid": "https://secure.runescape.com/m=news/summer-sweep-up---agility--chambers-of-xeric-changes?oldschool=1",
-  "last_title": "Summer Sweep Up - Agility & Chambers of Xeric Changes",
-  "last_link": "https://secure.runescape.com/m=news/summer-sweep-up---agility--chambers-of-xeric-changes?oldschool=1",
+  "last_guid": "https://secure.runescape.com/m=news/pvp-bootcamp-event-by-katerena-?oldschool=1",
+  "last_title": "PvP Bootcamp: Event by Katerena",
+  "last_link": "https://secure.runescape.com/m=news/pvp-bootcamp-event-by-katerena-?oldschool=1",
   "content_hashes": {
+    "https://secure.runescape.com/m=news/pvp-bootcamp-event-by-katerena-?oldschool=1": "7f7b9bad751a1fd1755ff56c4a86b6a8c95a0cb202a537af94fdbe878d7de0c3",
     "https://secure.runescape.com/m=news/summer-sweep-up---agility--chambers-of-xeric-changes?oldschool=1": "8b7068d2da2bbe62df126820e11a715632de846b266cb13b3271508a90c7d46b",
     "https://secure.runescape.com/m=news/bronzeman-mode--a-ruff-situation?oldschool=1": "4d827f3205f0d7c096e04c3bde45ccd05c3eb8ebfe6b2a419cc694af4adbda86",
     "https://secure.runescape.com/m=news/the-official-osrs-podcast-episode-17-with-mod-arcane?oldschool=1": "a18c4262415d70b1b11adaf27f9c3aa4f9d8fecf1f1ed867a6acc4f97633486a",
@@ -16,8 +17,7 @@
     "https://secure.runescape.com/m=news/crusader-classic-pvp-event-b0aty-odablock-solo-mission--more?oldschool=1": "3fe45b749abb9c0c2d00a8e9ba49dd7a761a6ce1b1a424e4a8cf0d64fd6e4a91",
     "https://secure.runescape.com/m=news/golden-gnomes-2026-nominations-now-open-1?oldschool=1": "fa9816a9ceb008d8c5850f9ae47d2cd6530da8e1cbb6518587f2f890f4754163",
     "https://secure.runescape.com/m=news/monopoly-runescape-edition-preorder-now?oldschool=1": "47652709524ef0381e53036a5e0f521ce9732bc0028b5dad4a3414c9b3814b52",
-    "https://secure.runescape.com/m=news/summer-sweep-up-gear--pvm-changes?oldschool=1": "2afe402223268e310f905ade98c38cb5c151aa64e8510a6a5f5153c0262ae453",
-    "https://secure.runescape.com/m=news/the-official-osrs-podcast-episode-15-with-mod-jerv?oldschool=1": "a6b115cf771877122148373efa8430d17bba0f6765413c7987537b0e941d7433"
+    "https://secure.runescape.com/m=news/summer-sweep-up-gear--pvm-changes?oldschool=1": "2afe402223268e310f905ade98c38cb5c151aa64e8510a6a5f5153c0262ae453"
   },
-  "updated_utc": "2026-08-13T07:44:25+00:00"
+  "updated_utc": "2026-08-13T10:01:13+00:00"
 }
