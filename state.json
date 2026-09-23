@@ -1,11 +1,12 @@
 {
-  "last_guid": "https://secure.runescape.com/m=news/summer-sweep-up-pet-improvements--more?oldschool=1",
-  "last_title": "Summer Sweep-Up Pet Improvements & More",
-  "last_link": "https://secure.runescape.com/m=news/summer-sweep-up-pet-improvements--more?oldschool=1",
+  "last_guid": "https://secure.runescape.com/m=news/further-gathering-efficiencies?oldschool=1",
+  "last_title": "Further Gathering Efficiencies",
+  "last_link": "https://secure.runescape.com/m=news/further-gathering-efficiencies?oldschool=1",
   "content_hashes": {
-    "https://secure.runescape.com/m=news/summer-sweep-up-pet-improvements--more?oldschool=1": "db6e4cfc6d3d61954b31f4a1f49e670bc7ad5417b50e5bd1c93349a7279726d0",
+    "https://secure.runescape.com/m=news/further-gathering-efficiencies?oldschool=1": "41912a9034b58e34abf00ca923b11f227c3087ca0f8c01097250e8d8cd8ab930",
     "https://secure.runescape.com/m=news/the-graveyard---rewards-blog?oldschool=1": "e64e143b89f90c8d6ff5b24a46e8bd45abb1e666cccdef17a871675d5bd359c6",
     "https://secure.runescape.com/m=news/community-spotlight-unpragmatic-covers?oldschool=1": "8d47374f5a1e8fdd4e193b29294b52c0595b4e168408b128743a8df49f148b66",
+    "https://secure.runescape.com/m=news/summer-sweep-up-pet-improvements--more?oldschool=1": "db6e4cfc6d3d61954b31f4a1f49e670bc7ad5417b50e5bd1c93349a7279726d0",
     "https://secure.runescape.com/m=news/runescape-dragonwilds-10-out-now?oldschool=1": "8c4b55d8a44391942966a3f156132b6760c995286a1c6d1b4572277b63ce510e",
     "https://secure.runescape.com/m=news/checking-in-jagex-launcher-on-mac?oldschool=1": "5359859bb8ed17231eca33b0e755d3b8fa6ec54c01bd9b21a12f7f8baa49f6fe",
     "https://secure.runescape.com/m=news/our-stance-on-cryptocurrency-and-market-manipulation?oldschool=1": "28b0e21e41b9d0a561c43f4e6e094b1ab03e4560893be170142721c70ddfa5f3",
@@ -16,8 +17,7 @@
     "https://secure.runescape.com/m=news/summer-sweep-up-miscellaneous?oldschool=1": "c509789b9b4fada0bd4fb255ab6e6d065b2be41dc46ca202c6d2d04fe3f0b0ca",
     "https://secure.runescape.com/m=news/the-official-osrs-podcast-episode-20-with-mod-surma?oldschool=1": "55f1369cb530ed9fa62ecaf98fb844b102fd10288f938e3eadf00a35fdc8bb6e",
     "https://secure.runescape.com/m=news/mad-angel-combat-achievements?oldschool=1": "594ad326f84624a7ce66725b32b296ae3cf521777a78abcba503dd0f5213d329",
-    "https://secure.runescape.com/m=news/the-official-osrs-podcast-episode-19-with-mod-archie?oldschool=1": "6dff11ff438570cd26a6ef7fe15ed2a8e73ef642f7021dc68460c020579f0161",
-    "https://secure.runescape.com/m=news/bronzeman-post-poll-update?oldschool=1": "dcf23c8b175a0e39e3e4ed9462384f656655b8dec25262ddf4c9cc990943ce3d"
+    "https://secure.runescape.com/m=news/the-official-osrs-podcast-episode-19-with-mod-archie?oldschool=1": "6dff11ff438570cd26a6ef7fe15ed2a8e73ef642f7021dc68460c020579f0161"
   },
-  "updated_utc": "2026-09-23T04:26:20+00:00"
+  "updated_utc": "2026-09-23T11:18:18+00:00"
 }
