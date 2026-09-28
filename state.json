@@ -4,6 +4,7 @@
   "last_link": "https://secure.runescape.com/m=news/further-gathering-efficiencies?oldschool=1",
   "content_hashes": {
     "https://secure.runescape.com/m=news/further-gathering-efficiencies?oldschool=1": "e0f714f9aba8022c6c84952224f8a969856ef27307f789f27e943b5137b3bca8",
+    "https://secure.runescape.com/m=news/game-status-information-centre?oldschool=1": "67a1c322a780168505d6df43030c41aac43e67928b2cf3c619d89f40458f7d58",
     "https://secure.runescape.com/m=news/scape-ink-apparel-preorder-now?oldschool=1": "cf0d75624806cd2c66d3a4b7c980bb34eb41a562aabbf9488d88e0482a27c88b",
     "https://secure.runescape.com/m=news/the-graveyard---rewards-blog?oldschool=1": "e64e143b89f90c8d6ff5b24a46e8bd45abb1e666cccdef17a871675d5bd359c6",
     "https://secure.runescape.com/m=news/community-spotlight-unpragmatic-covers?oldschool=1": "8d47374f5a1e8fdd4e193b29294b52c0595b4e168408b128743a8df49f148b66",
@@ -11,7 +12,6 @@
     "https://secure.runescape.com/m=news/runescape-dragonwilds-10-out-now?oldschool=1": "8c4b55d8a44391942966a3f156132b6760c995286a1c6d1b4572277b63ce510e",
     "https://secure.runescape.com/m=news/checking-in-jagex-launcher-on-mac?oldschool=1": "5359859bb8ed17231eca33b0e755d3b8fa6ec54c01bd9b21a12f7f8baa49f6fe",
     "https://secure.runescape.com/m=news/our-stance-on-cryptocurrency-and-market-manipulation?oldschool=1": "28b0e21e41b9d0a561c43f4e6e094b1ab03e4560893be170142721c70ddfa5f3",
-    "https://secure.runescape.com/m=news/game-status-information-centre?oldschool=1": "e7d539758f9acf7f4b66eec3de9f648bb066f4ed5bb3ef1fd031b18bf2142e81",
     "https://secure.runescape.com/m=news/a-ruff-situation--crab-quest-out-today?oldschool=1": "abb4477e0a081638f7f1a9ead562436daee41a261491b7470bbdd9bc0c141eaf",
     "https://secure.runescape.com/m=news/menu-entry-swapper-overhaul---live-now?oldschool=1": "60c57ea6a85222d557bd2274ee7a4a91a5a675b1121398c4825b94aa3c480f52",
     "https://secure.runescape.com/m=news/old-school-lanscape---live-now?oldschool=1": "08e9ae5e35d5c47bc54004c8b02005cb4c0d4de1734c58256007b8393efca65d",
@@ -19,5 +19,5 @@
     "https://secure.runescape.com/m=news/the-official-osrs-podcast-episode-20-with-mod-surma?oldschool=1": "55f1369cb530ed9fa62ecaf98fb844b102fd10288f938e3eadf00a35fdc8bb6e",
     "https://secure.runescape.com/m=news/mad-angel-combat-achievements?oldschool=1": "594ad326f84624a7ce66725b32b296ae3cf521777a78abcba503dd0f5213d329"
   },
-  "updated_utc": "2026-09-28T04:59:43+00:00"
+  "updated_utc": "2026-09-28T13:34:50+00:00"
 }
