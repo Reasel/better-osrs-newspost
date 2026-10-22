@@ -1,9 +1,10 @@
 {
-  "last_guid": "https://secure.runescape.com/m=news/the-fractured-archive---out-today?oldschool=1",
-  "last_title": "The Fractured Archive - Out Today",
-  "last_link": "https://secure.runescape.com/m=news/the-fractured-archive---out-today?oldschool=1",
+  "last_guid": "https://secure.runescape.com/m=news/hardcore-worlds-are-coming-on-november-4th?oldschool=1",
+  "last_title": "Hardcore Worlds Are Coming On November 4th",
+  "last_link": "https://secure.runescape.com/m=news/hardcore-worlds-are-coming-on-november-4th?oldschool=1",
   "content_hashes": {
-    "https://secure.runescape.com/m=news/the-fractured-archive---out-today?oldschool=1": "c05011a5255d135b7f0ae21ef3b2071293f586a16639f2e59d4b0ebffc9cfbd5",
+    "https://secure.runescape.com/m=news/hardcore-worlds-are-coming-on-november-4th?oldschool=1": "6d302382d0564ab9fefa728be250b9519a325389dfc4cab25b8f5e0335f5b769",
+    "https://secure.runescape.com/m=news/the-fractured-archive---out-today?oldschool=1": "66ec7d260bc706afaf87827b6ee59797534ecc6376af14fc6235c94224afee1e",
     "https://secure.runescape.com/m=news/jagex-accounts-migration-begins-nov-17?oldschool=1": "f4c562adc09a970787c860bacc01ff07b36c93783ba0288f1074f7e36983e28f",
     "https://secure.runescape.com/m=news/community-spotlight-10boot?oldschool=1": "5b2b54e9a92de2d3eea44a7a84b125963d958632237ab0a3825e30f642f087dd",
     "https://secure.runescape.com/m=news/more-gathering-efficiencies?oldschool=1": "1a05ddbad80ff856ef8f2dd101dd7236d0328e530deda2823674a0bee281bcf2",
@@ -16,8 +17,7 @@
     "https://secure.runescape.com/m=news/runefest-2026-summit-overview?oldschool=1": "5c59c258756985fa4434af32c94bde7cdf377d0b3e8f248dcbabb1ff2a55ee6b",
     "https://secure.runescape.com/m=news/quest-month---runefest-2026?oldschool=1": "45006e79f5f878265e34ff0b15e0ab5d0453a9c16cd319d7ed3db6303d2bd7fd",
     "https://secure.runescape.com/m=news/ge-improvements-beyond-max-cash?oldschool=1": "5805aeb482e4187ce1bcc0d1ad31c3cbe46e790aeb75f272152349c4812c3f8e",
-    "https://secure.runescape.com/m=news/get-ready-for-runefest-2026?oldschool=1": "0e040fa6e569400f76f833b42657a80a67eca1a5ba4878808308b24b6150ec99",
-    "https://secure.runescape.com/m=news/scape-ink-apparel-preorder-now?oldschool=1": "cf0d75624806cd2c66d3a4b7c980bb34eb41a562aabbf9488d88e0482a27c88b"
+    "https://secure.runescape.com/m=news/get-ready-for-runefest-2026?oldschool=1": "0e040fa6e569400f76f833b42657a80a67eca1a5ba4878808308b24b6150ec99"
   },
-  "updated_utc": "2026-10-22T11:34:48+00:00"
+  "updated_utc": "2026-10-22T17:00:31+00:00"
 }
