@@ -1,8 +1,10 @@
 {
-  "last_guid": "https://secure.runescape.com/m=news/merch-drop---tfa-pins-and-new-lines-from-runefest?oldschool=1",
-  "last_title": "Merch Drop - TFA Pins and New Lines from RuneFest!",
-  "last_link": "https://secure.runescape.com/m=news/merch-drop---tfa-pins-and-new-lines-from-runefest?oldschool=1",
+  "last_guid": "https://secure.runescape.com/m=news/halloween-event-2026-tfa-tweaks--more?oldschool=1",
+  "last_title": "Halloween Event 2026, TFA Tweaks & More!",
+  "last_link": "https://secure.runescape.com/m=news/halloween-event-2026-tfa-tweaks--more?oldschool=1",
   "content_hashes": {
+    "https://secure.runescape.com/m=news/halloween-event-2026-tfa-tweaks--more?oldschool=1": "3c2b200d3b5a863d96a1691b61e14b5ba54a3f2321640195a470fa93cfd70bd8",
+    "https://secure.runescape.com/m=news/old-school-roadmap?oldschool=1": "77653becc112bc6a20915d3f146052f0726fdd356ae60ee8546fd5035a04c7c6",
     "https://secure.runescape.com/m=news/merch-drop---tfa-pins-and-new-lines-from-runefest?oldschool=1": "24bef7ad73b451479b8c145167d000684b2905d3429afb80d94b525d9f17ea42",
     "https://secure.runescape.com/m=news/hardcore-worlds-are-coming-on-november-4th?oldschool=1": "6d302382d0564ab9fefa728be250b9519a325389dfc4cab25b8f5e0335f5b769",
     "https://secure.runescape.com/m=news/the-fractured-archive---out-today?oldschool=1": "66ec7d260bc706afaf87827b6ee59797534ecc6376af14fc6235c94224afee1e",
@@ -15,9 +17,7 @@
     "https://secure.runescape.com/m=news/game-status-information-centre?oldschool=1": "1de4d30448d6707a3c4e12c3a9db6011f49071746db1c8d0dda8b5c7756b63bc",
     "https://secure.runescape.com/m=news/the-fractured-archive---everything-you-need-to-know?oldschool=1": "2a673959e02c65b6d47241750f3cecdcc9e11d39ae252f340a5ba896ab5a2cfb",
     "https://secure.runescape.com/m=news/golden-gnomes-2026-winners?oldschool=1": "912b976f1b2312ef1df72012bce523b366b2bbbfcdbbd850d0ad40e221cd031c",
-    "https://secure.runescape.com/m=news/runefest-2026-summit-overview?oldschool=1": "5c59c258756985fa4434af32c94bde7cdf377d0b3e8f248dcbabb1ff2a55ee6b",
-    "https://secure.runescape.com/m=news/quest-month---runefest-2026?oldschool=1": "45006e79f5f878265e34ff0b15e0ab5d0453a9c16cd319d7ed3db6303d2bd7fd",
-    "https://secure.runescape.com/m=news/ge-improvements-beyond-max-cash?oldschool=1": "5805aeb482e4187ce1bcc0d1ad31c3cbe46e790aeb75f272152349c4812c3f8e"
+    "https://secure.runescape.com/m=news/runefest-2026-summit-overview?oldschool=1": "5c59c258756985fa4434af32c94bde7cdf377d0b3e8f248dcbabb1ff2a55ee6b"
   },
-  "updated_utc": "2026-10-28T05:14:08+00:00"
+  "updated_utc": "2026-10-28T12:34:55+00:00"
 }
