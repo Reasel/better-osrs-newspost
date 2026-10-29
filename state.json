@@ -1,10 +1,11 @@
 {
-  "last_guid": "https://secure.runescape.com/m=news/introducing-melvor-idle-2-a-runescape-adventure?oldschool=1",
-  "last_title": "Introducing Melvor Idle 2: A RuneScape Adventure",
-  "last_link": "https://secure.runescape.com/m=news/introducing-melvor-idle-2-a-runescape-adventure?oldschool=1",
+  "last_guid": "https://secure.runescape.com/m=news/deep-sea-diving-expansion?oldschool=1",
+  "last_title": "Deep Sea Diving Expansion",
+  "last_link": "https://secure.runescape.com/m=news/deep-sea-diving-expansion?oldschool=1",
   "content_hashes": {
+    "https://secure.runescape.com/m=news/deep-sea-diving-expansion?oldschool=1": "e731076bb72f6632500c4bb3bb6b7c0aba53b9413f55a9a87416a8079974755c",
     "https://secure.runescape.com/m=news/introducing-melvor-idle-2-a-runescape-adventure?oldschool=1": "9ea72a142fa8e26bab48f180aa7a8dba2a3449c5df119915433070fc5b11e232",
-    "https://secure.runescape.com/m=news/halloween-event-2026-tfa-tweaks--more?oldschool=1": "d537ddc529caacc572146356a6cde7c0541d575c1aa18b724be384042b08e31a",
+    "https://secure.runescape.com/m=news/halloween-event-2026-tfa-tweaks--more?oldschool=1": "eae53b394af96d834beb7c0ac403f461c39b31af07cad494999316cdacadf67b",
     "https://secure.runescape.com/m=news/old-school-roadmap?oldschool=1": "45040e53a3b7a5e2836a2484d90c64c0de2d5f284b139e83ce98203e917d4b74",
     "https://secure.runescape.com/m=news/merch-drop---tfa-pins-and-new-lines-from-runefest?oldschool=1": "24bef7ad73b451479b8c145167d000684b2905d3429afb80d94b525d9f17ea42",
     "https://secure.runescape.com/m=news/hardcore-worlds-are-coming-on-november-4th?oldschool=1": "6d302382d0564ab9fefa728be250b9519a325389dfc4cab25b8f5e0335f5b769",
@@ -16,8 +17,7 @@
     "https://secure.runescape.com/m=news/godwars-replica-collection---preorder-now?oldschool=1": "3c51a3675eb2663478238aa698891688aea8f9c30ae76ba95d59f199a2ced74a",
     "https://secure.runescape.com/m=news/pete-kayers-challenges?oldschool=1": "d6ca141a4c8e02d4fcf39f24f2484cad1815ebb5807da686d45236d9502752b7",
     "https://secure.runescape.com/m=news/game-status-information-centre?oldschool=1": "1de4d30448d6707a3c4e12c3a9db6011f49071746db1c8d0dda8b5c7756b63bc",
-    "https://secure.runescape.com/m=news/the-fractured-archive---everything-you-need-to-know?oldschool=1": "2a673959e02c65b6d47241750f3cecdcc9e11d39ae252f340a5ba896ab5a2cfb",
-    "https://secure.runescape.com/m=news/golden-gnomes-2026-winners?oldschool=1": "fb3489c30468e4f49db749741f7d2bea05fb992ca4fd3a23b57c777c58329e0a"
+    "https://secure.runescape.com/m=news/the-fractured-archive---everything-you-need-to-know?oldschool=1": "2a673959e02c65b6d47241750f3cecdcc9e11d39ae252f340a5ba896ab5a2cfb"
   },
-  "updated_utc": "2026-10-29T12:58:37+00:00"
+  "updated_utc": "2026-10-29T18:20:27+00:00"
 }
