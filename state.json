@@ -1,15 +1,15 @@
 {
-  "last_guid": "https://secure.runescape.com/m=news/name-release-begins-today?oldschool=1",
-  "last_title": "Name Release Begins Today!",
-  "last_link": "https://secure.runescape.com/m=news/name-release-begins-today?oldschool=1",
+  "last_guid": "https://secure.runescape.com/m=news/deep-sea-diving-expansion?oldschool=1",
+  "last_title": "Deep Sea Diving Expansion",
+  "last_link": "https://secure.runescape.com/m=news/deep-sea-diving-expansion?oldschool=1",
   "content_hashes": {
-    "https://secure.runescape.com/m=news/name-release-begins-today?oldschool=1": "6e351f9926ea4e1a944ef345fc5986d905e5a823f343b1ad247c42f84d82a74a",
+    "https://secure.runescape.com/m=news/deep-sea-diving-expansion?oldschool=1": "8325d75e9078f7f2fff31ad3849757473c6641d3f0a557490a58a576c874a63e",
+    "https://secure.runescape.com/m=news/game-status-information-centre?oldschool=1": "7b59ad0c27f519d942b5d84d5fe6915494562a48ef2f1955e93b1d8ac48f0806",
+    "https://secure.runescape.com/m=news/name-release-begins-today?oldschool=1": "1b504e1c89b0b286b65940521f6ee17cd9edbec8d5d973e4013b8ea9cb08161e",
     "https://secure.runescape.com/m=news/hardcore-worlds--out-today?oldschool=1": "d0ece0853bcb2d78f86d4977557cd10ba655299f01fd0c6e5fade4296ba389a0",
-    "https://secure.runescape.com/m=news/game-status-information-centre?oldschool=1": "f7eb09fe54dd3d88e8796e2e590f1fa688b59892f274543cbd05dc7c6e21c0de",
-    "https://secure.runescape.com/m=news/quest-month-kick-off-tfa-tweaks--more?oldschool=1": "0d7d4849939e77e00def3072ac1886e926dadda168012dc13d21fb7e083e6338",
+    "https://secure.runescape.com/m=news/quest-month-kick-off-tfa-tweaks--more?oldschool=1": "85be683c9d8c5b332c11335c907e1bc8ab80c2aef1887006eaf677e529f763af",
+    "https://secure.runescape.com/m=news/the-reapers-raffle--hardcore-worlds?oldschool=1": "e0a0d5e27c7b54837eaddec0169563df0cd6640883f02201dd8ca749bd64a9c6",
     "https://secure.runescape.com/m=news/name-release-begins-soon?oldschool=1": "80e2ae67df1b5691902733930d3e293d9a512dc1a3e58ff8fc7df913e19836b9",
-    "https://secure.runescape.com/m=news/the-reapers-raffle--hardcore-worlds?oldschool=1": "cf84b8968c2120a35dedd67efde4c58dfd6de1a001b719a27dfc190722eef7fe",
-    "https://secure.runescape.com/m=news/deep-sea-diving-expansion?oldschool=1": "e731076bb72f6632500c4bb3bb6b7c0aba53b9413f55a9a87416a8079974755c",
     "https://secure.runescape.com/m=news/introducing-melvor-idle-2-a-runescape-adventure?oldschool=1": "9ea72a142fa8e26bab48f180aa7a8dba2a3449c5df119915433070fc5b11e232",
     "https://secure.runescape.com/m=news/halloween-event-2026-tfa-tweaks--more?oldschool=1": "eae53b394af96d834beb7c0ac403f461c39b31af07cad494999316cdacadf67b",
     "https://secure.runescape.com/m=news/old-school-roadmap?oldschool=1": "45040e53a3b7a5e2836a2484d90c64c0de2d5f284b139e83ce98203e917d4b74",
@@ -19,5 +19,5 @@
     "https://secure.runescape.com/m=news/jagex-accounts-migration-begins-nov-17?oldschool=1": "f4c562adc09a970787c860bacc01ff07b36c93783ba0288f1074f7e36983e28f",
     "https://secure.runescape.com/m=news/community-spotlight-10boot?oldschool=1": "5b2b54e9a92de2d3eea44a7a84b125963d958632237ab0a3825e30f642f087dd"
   },
-  "updated_utc": "2026-11-09T05:51:13+00:00"
+  "updated_utc": "2026-11-09T18:40:02+00:00"
 }
