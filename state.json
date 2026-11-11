@@ -1,11 +1,12 @@
 {
-  "last_guid": "https://secure.runescape.com/m=news/deep-sea-diving-expansion?oldschool=1",
-  "last_title": "Deep Sea Diving Expansion",
-  "last_link": "https://secure.runescape.com/m=news/deep-sea-diving-expansion?oldschool=1",
+  "last_guid": "https://secure.runescape.com/m=news/quest-month-week-two--tfa-changes?oldschool=1",
+  "last_title": "Quest Month: Week Two & TFA Changes",
+  "last_link": "https://secure.runescape.com/m=news/quest-month-week-two--tfa-changes?oldschool=1",
   "content_hashes": {
+    "https://secure.runescape.com/m=news/quest-month-week-two--tfa-changes?oldschool=1": "a32d75cca25dccdb87eec5af0fa23e89d6c35e8a487b209b0ce734fc2cbe5643",
     "https://secure.runescape.com/m=news/deep-sea-diving-expansion?oldschool=1": "8325d75e9078f7f2fff31ad3849757473c6641d3f0a557490a58a576c874a63e",
     "https://secure.runescape.com/m=news/game-status-information-centre?oldschool=1": "e937256ace04bf5855c128ec06ee95f4bc9167753866483c7d98734257b51641",
-    "https://secure.runescape.com/m=news/name-release-begins-today?oldschool=1": "41ae3dba88a2d275c2e98d30011475408144b84fed59ef0ee8503bd2111eeab3",
+    "https://secure.runescape.com/m=news/name-release-begins-today?oldschool=1": "e76d245e8aeb42bfbc339725196d7a95f57e6c84fd4392130254698eb4432712",
     "https://secure.runescape.com/m=news/hardcore-worlds--out-today?oldschool=1": "d0ece0853bcb2d78f86d4977557cd10ba655299f01fd0c6e5fade4296ba389a0",
     "https://secure.runescape.com/m=news/quest-month-kick-off-tfa-tweaks--more?oldschool=1": "85be683c9d8c5b332c11335c907e1bc8ab80c2aef1887006eaf677e529f763af",
     "https://secure.runescape.com/m=news/the-reapers-raffle--hardcore-worlds?oldschool=1": "e0a0d5e27c7b54837eaddec0169563df0cd6640883f02201dd8ca749bd64a9c6",
@@ -16,8 +17,7 @@
     "https://secure.runescape.com/m=news/merch-drop---tfa-pins-and-new-lines-from-runefest?oldschool=1": "24bef7ad73b451479b8c145167d000684b2905d3429afb80d94b525d9f17ea42",
     "https://secure.runescape.com/m=news/hardcore-worlds-are-coming-on-november-4th?oldschool=1": "6d302382d0564ab9fefa728be250b9519a325389dfc4cab25b8f5e0335f5b769",
     "https://secure.runescape.com/m=news/the-fractured-archive---out-today?oldschool=1": "66ec7d260bc706afaf87827b6ee59797534ecc6376af14fc6235c94224afee1e",
-    "https://secure.runescape.com/m=news/jagex-accounts-migration-begins-nov-17?oldschool=1": "f4c562adc09a970787c860bacc01ff07b36c93783ba0288f1074f7e36983e28f",
-    "https://secure.runescape.com/m=news/community-spotlight-10boot?oldschool=1": "5b2b54e9a92de2d3eea44a7a84b125963d958632237ab0a3825e30f642f087dd"
+    "https://secure.runescape.com/m=news/jagex-accounts-migration-begins-nov-17?oldschool=1": "f4c562adc09a970787c860bacc01ff07b36c93783ba0288f1074f7e36983e28f"
   },
-  "updated_utc": "2026-11-11T10:38:39+00:00"
+  "updated_utc": "2026-11-11T17:20:18+00:00"
 }
